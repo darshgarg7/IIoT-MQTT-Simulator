@@ -1,4 +1,4 @@
-(* # IoT MQTT Simulation with Clients and Mosquitto Broker
+# IoT MQTT Simulation with Clients and Mosquitto Broker
 Developed an MQTT-based simulation framework in Go that generates and streams synthetic sensor data for virtual clients across distinct topics, enabling realistic testing and evaluation of OT systems.
 
 # Overview
@@ -51,13 +51,12 @@ Each Client subscribes to and publishes data specific to their machine (e.g., II
 
 
 # Instructions for Running the Project
-Mosquitto Broker: You need to have the Mosquitto broker installed to simulate the MQTT server.
+Mosquitto Broker: You need to have the Mosquitto broker installed to simulate the MQTT server. You also have to have Go installed!
 
 Install Mosquitto:
 
 On Ubuntu/Debian:
 sudo apt-get install mosquitto
-sudo apt-get install mosquitto-clients
 
 On macOS (using Homebrew):
 brew install mosquitto
@@ -72,4 +71,3 @@ The -v option enables verbose output so you can see all incoming and outgoing me
 on macOS:
 brew services start mosquitto
 to stop: brew services stop mosquitto
- *)
