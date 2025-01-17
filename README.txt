@@ -73,4 +73,6 @@ to stop: brew services stop mosquitto
 
 to see outputs, go to <outputs.txt>
 
-navigate to the correct directory and run: go run main.go
+1. git clone
+
+2, navigate to the correct directory and run: go run main.go
