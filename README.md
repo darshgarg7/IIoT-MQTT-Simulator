@@ -25,42 +25,32 @@ Client 5 subscribes to +/command/data and publishes status updates to +/status.
 
 
 # Instructions for Running the Project
-Prerequisites
 Mosquitto Broker: You need to have the Mosquitto broker installed to simulate the MQTT server.
 
 Install Mosquitto:
 
 On Ubuntu/Debian:
-bash
-Copy code
 sudo apt-get install mosquitto
 sudo apt-get install mosquitto-clients
+
 On macOS (using Homebrew):
-bash
-Copy code
 brew install mosquitto
-Python MQTT Client Libraries: Install the Python MQTT client library (paho-mqtt) for communication between the clients and the broker.
 
-Install the required libraries:
-
-bash
-Copy code
-pip install paho-mqtt
 Running the Mosquitto Broker
 Once you have installed Mosquitto, you can start the broker with the following command (ensure port 1883 is open):
 
-bash
-Copy code
-mosquitto -v
-on macos:
-brew services start mosquitto
-to stop: brew services stop mosquitto
+On Ubuntu/Debian:
+mosquitto -v 
 The -v option enables verbose output so you can see all incoming and outgoing messages in the terminal.
 
+on macOS:
+brew services start mosquitto
+to stop: brew services stop mosquitto
 
 
 
-Running the IoT Clients (optional):
+
+# Running the IoT Clients (optional):
 Each client simulates an IoT device that connects to the broker and interacts with different topics. You can run the clients one at a time or in parallel.
 
 Client 1 (Publisher and Subscriber):
