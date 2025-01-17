@@ -16,7 +16,7 @@ exit status 1
 ==> Successfully started `mosquitto` (label: homebrew.mxcl.mosquitto)
 
 
-# Then, you can run the program (go run main.go):
+# Then, you can run the program (ensure you are in the correct directory & run: go run main.go):
 
 [Running] go run "(your personal path to )/main.go"
 Connected to MQTT broker.
