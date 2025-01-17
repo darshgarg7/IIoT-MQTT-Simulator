@@ -152,3 +152,9 @@ MQTT client disconnected. Goodbye!
 
 [Done] exited with code=null in 6.209 seconds
 
+
+# Don't forget to stop your mosquitto broker from running in the background afterward!
+
+(base) ____@MacBook-Pro ~ % brew services stop mosquitto
+Stopping `mosquitto`... (might take a while)
+==> Successfully stopped `mosquitto` (label: homebrew.mxcl.mosquitto)
