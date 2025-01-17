@@ -73,6 +73,6 @@ to stop: brew services stop mosquitto
 
 to see outputs, go to <outputs.txt>
 
-1. git clone
+1. git clone https://github.com/darshgarg7/IIoT-MQTT-Simulator.git
 
-2, navigate to the correct directory and run: go run main.go
+2. run command in terminal: go run main.go
