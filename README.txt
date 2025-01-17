@@ -1,4 +1,4 @@
-# IoT MQTT Simulation with Clients and Mosquitto Broker
+(* # IoT MQTT Simulation with Clients and Mosquitto Broker
 Developed an MQTT-based simulation framework in Go that generates and streams synthetic sensor data for virtual clients across distinct topics, enabling realistic testing and evaluation of OT systems.
 
 # Overview
@@ -39,35 +39,33 @@ The program listens for OS termination signals (SIGINT, SIGTERM) to shut down gr
 
 # Visual Representation
 Below is a diagram illustrating how MQTT works with the 5 IoT clients and the Mosquitto broker:
-#                          +-------------------+
-#                          |  Mosquitto Broker |
-#                          +-------------------+
- #                                  |
-  # ----------------------------------------------------------
-#   |           |             |             |            |  
-#+--------+  +--------+  +--------+   +--------+   +--------+
-#| Client 1|  | Client 2|  | Client 3|   | Client 4|   | Client 5|
-#+--------+  +--------+  +--------+   +--------+   +--------+
+
+                             +---------------------+
+                             | Ignition SCADA /    |
+                             | Mosquitto Broker    |
+                             +---------------------+
+                                      |
+  --------------------------------------------------------------------------------
+  |                  |                |                  |                 |   
++--------+      +--------+        +--------+         +--------+         +--------+
+| Client 1|<--->| Client 2|<---->| Client 3|<----->| Client 4|<--->| Client 5|
++--------+      +--------+        +--------+         +--------+         +--------+
+    |                |                |                 |                 |
+  Subscribes to     Subscribes to     Subscribes to      Subscribes to      Subscribes to
+   IIoT/machine_1/* IIoT/machine_2/* IIoT/machine_3/*  IIoT/machine_4/*    IIoT/machine_5/*
+   Publishes to     Publishes to     Publishes to       Publishes to        Publishes to
+   IIoT/machine_1/* IIoT/machine_2/* IIoT/machine_3/*  IIoT/machine_4/*    IIoT/machine_5/*
+   (Temperature,    (Temperature,    (Temperature,      (Temperature,        (Temperature,
+   Humidity, Pressure) Humidity, Pressure) Humidity, Pressure) Humidity, Pressure) Humidity, Pressure)
+   Also subscribes to 'sensor/data' for collective communication with all clients.
+
 
 
 # Explanation of the Diagram:
 
-Mosquitto Broker: Acts as the central hub for MQTT communication, receiving and dispatching messages to clients.
-IoT Clients: Five clients are connected to the Mosquitto broker, each subscribing to relevant topics and publishing data.
-Topics: Each client subscribes to topics corresponding to their respective machine's sensor data, listening for updates; they publish data simulated sensor data to topics corresponding to the machine's sensors.
-
-Client (Machine) 1 subscribes to IIoT/machine_1/temperature & humidity & pressure and publishes simulated data to IIoT/machine_1/temperature & humidity & pressure respectfully.
-
-Client (Machine) 2 subscribes to IIoT/machine_2/temperature & humidity & pressure and publishes simulated data to IIoT/machine_2/temperature & humidity & pressure respectfully.
-
-Client (Machine) 3 subscribes to IIoT/machine_3/temperature & humidity & pressure and publishes simulated data to IIoT/machine_3/temperature & humidity & pressure respectfully.
-
-Client (Machine) 4 subscribes to IIoT/machine_4/temperature & humidity & pressure and publishes simulated data to IIoT/machine_4/temperature & humidity & pressure respectfully.
-
-Client (Machine) 5 subscribes to IIoT/machine_5/temperature & humidity & pressure and publishes simulated data to IIoT/machine_5/temperature & humidity & pressure respectfully.
-
-
-All clients subscribe and publish to the sensor/data topic to recieve and send updates to all other machines in a collective channel. There's both isolated and collective communication between the clients.
+Mosquitto Broker / Ignition SCADA: Central hub responsible for managing message exchanges.
+Clients: Represent machines that both publish and subscribe to topics. They also interact via the sensor/data topic to exchange collective information.
+Each Client subscribes to and publishes data specific to their machine (e.g., IIoT/machine_1/temperature for Client 1). They also interact with all other machines by subscribing to the collective sensor/data topic and publishing their own updates to it.
 
 
 
@@ -93,3 +91,4 @@ The -v option enables verbose output so you can see all incoming and outgoing me
 on macOS:
 brew services start mosquitto
 to stop: brew services stop mosquitto
+ *)
