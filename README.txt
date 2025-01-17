@@ -40,26 +40,7 @@ The program listens for OS termination signals (SIGINT, SIGTERM) to shut down gr
 # Visual Representation
 Below is a diagram illustrating how MQTT works with the 5 IoT clients and the Mosquitto broker:
 
-                             +---------------------+
-                             | Ignition SCADA /    |
-                             | Mosquitto Broker    |
-                             +---------------------+
-                                      |
-  --------------------------------------------------------------------------------
-  |                  |                |                  |                 |   
-+--------+      +--------+        +--------+         +--------+         +--------+
-| Client 1|<--->| Client 2|<---->| Client 3|<----->| Client 4|<--->| Client 5|
-+--------+      +--------+        +--------+         +--------+         +--------+
-    |                |                |                 |                 |
-  Subscribes to     Subscribes to     Subscribes to      Subscribes to      Subscribes to
-   IIoT/machine_1/* IIoT/machine_2/* IIoT/machine_3/*  IIoT/machine_4/*    IIoT/machine_5/*
-   Publishes to     Publishes to     Publishes to       Publishes to        Publishes to
-   IIoT/machine_1/* IIoT/machine_2/* IIoT/machine_3/*  IIoT/machine_4/*    IIoT/machine_5/*
-   (Temperature,    (Temperature,    (Temperature,      (Temperature,        (Temperature,
-   Humidity, Pressure) Humidity, Pressure) Humidity, Pressure) Humidity, Pressure) Humidity, Pressure)
-   Also subscribes to 'sensor/data' for collective communication with all clients.
-
-
+<go to Diagram.md>
 
 # Explanation of the Diagram:
 
