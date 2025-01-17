@@ -72,3 +72,5 @@ brew services start mosquitto
 to stop: brew services stop mosquitto
 
 to see outputs, go to <outputs.txt>
+
+navigate to the correct directory and run: go run main.go
