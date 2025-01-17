@@ -39,7 +39,6 @@ The program listens for OS termination signals (SIGINT, SIGTERM) to shut down gr
 
 # Visual Representation
 Below is a diagram illustrating how MQTT works with the 5 IoT clients and the Mosquitto broker:
-
                           +-------------------+
                           |  Mosquitto Broker |
                           +-------------------+
@@ -49,7 +48,6 @@ Below is a diagram illustrating how MQTT works with the 5 IoT clients and the Mo
 +--------+  +--------+  +--------+   +--------+   +--------+
 | Client 1|  | Client 2|  | Client 3|   | Client 4|   | Client 5|
 +--------+  +--------+  +--------+   +--------+   +--------+
-
 
 
 # Explanation of the Diagram:
