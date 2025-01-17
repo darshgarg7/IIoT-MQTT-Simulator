@@ -49,7 +49,6 @@ Clients: Represent machines that both publish and subscribe to topics. They also
 Each Client subscribes to and publishes data specific to their machine (e.g., IIoT/machine_1/temperature for Client 1). They also interact with all other machines by subscribing to the collective sensor/data topic and publishing their own updates to it.
 
 
-
 # Instructions for Running the Project
 Mosquitto Broker: You need to have the Mosquitto broker installed to simulate the MQTT server. You also have to have Go installed!
 
@@ -71,3 +70,5 @@ The -v option enables verbose output so you can see all incoming and outgoing me
 on macOS:
 brew services start mosquitto
 to stop: brew services stop mosquitto
+
+to see outputs, go to <outputs.txt>
